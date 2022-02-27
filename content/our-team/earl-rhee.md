@@ -1,5 +1,5 @@
 +++
-photo = "/uploads/images/earl-rhee.webp"
+photo = "/uploads/earl-rhee.webp"
 title = "Earl Rhee"
 weight = 50
 
