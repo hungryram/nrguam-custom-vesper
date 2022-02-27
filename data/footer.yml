@@ -1,6 +1,14 @@
 additional_links:
-  - link: /
+  - link: https://www.nrguam.com/
     name: Home
+  - name: Buy
+    link: https://search.idxhome.com/homesearch/162504
+  - name: Sell
+    link: https://www.nrguam.com/sell
+  - name: Lease
+    link: https://www.nrguam.com/lease
+  - name: Featured
+    link: https://search.idxhome.com/featured/162504
 footer_background_color: '#232733'
 background_image: >-
   https://res.cloudinary.com/hungryram19/image/upload/v1605403006/templates/realestate2/clean-living-room_b3bubn.jpg
