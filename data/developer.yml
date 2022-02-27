@@ -1,4 +1,18 @@
 column_size: 2-3@m
-custom_css:
+custom_css: |-
+  <style>
+  div.featured-boxes h3 {
+      background: white;
+      color: #000;
+      position: relative;
+      padding: 20px 10px;
+      left: 0;
+      width: 70%;
+      font-size: 1.2rem;
+  }
+  .uk-overlay-agent {
+      background: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0.7));
+  }
+  </style>
 custom_script:
 custom_closing_script:
