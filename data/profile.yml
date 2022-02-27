@@ -1,8 +1,8 @@
-company_name:
+company_name: National Realty Guam
 social_media:
-  instagram:
+  instagram: https://www.instagram.com/homesinguam/
   twitter:
-  facebook:
+  facebook: https://www.facebook.com/nationalrealtyguam
   pinterest:
   yelp:
   linkedin:
@@ -10,16 +10,19 @@ social_media:
 contact_information:
   name:
   cell:
-  phone:
-  email:
+  phone: +1 (671) 727-7811
+  email: earl@nrguam.com
   license:
-  address:
-  city:
-  state:
-  zip_code:
+  address: '845 N. Marine Corps Dr. #202'
+  city: Tamuning
+  state: GU
+  zip_code: '96913'
   google_page_link:
 search_engine_optimization:
-  title_tag:
-  meta_description:
+  title_tag: National Realty Guam | Buy and Sell Homes in Guam
+  meta_description: >-
+    National Realty of Guam aims to make real estate easy. We utilize innovation
+    and premium customer service to make you the #1 priority, which means less
+    of us, more of you.
   twitter_card:
     twitter_username:
