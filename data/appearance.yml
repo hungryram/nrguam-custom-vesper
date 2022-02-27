@@ -24,9 +24,11 @@ pages:
   image: /uploads/dark-white-kitchen-d50bh8.jpg
 page_sidebar:
   sidebar:
-    - _type: custom-text
-      template: custom-text
-      body:
+    - _type: blog-category
+      template: side-blog-category
+      comment: Nothing to configure, categories will display.
+    - _type: latest-posts
+      template: latest-posts
 colors:
   button_background_color: '#204079'
   button_text_color: '#ffffff'
