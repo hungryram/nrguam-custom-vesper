@@ -37,13 +37,5 @@ home_sections:
     image:
     image_alt_tag:
     image_width: 400
-  - _type: featured-boxes
-    template: featured-boxes
-    heading: Let's get started
-    body:
-    blocks:
-      heading: Buy
-      image: /uploads/20200823-112100-2-768x512.webp
-      link:
 ---
 
