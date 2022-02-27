@@ -1,0 +1,103 @@
+{{ $companyName := .Site.Data.profile.company_name }}
+{{ $footer := .Site.Data.footer }}
+{{ $footerContact := .Site.Data.profile.contact_information }}
+{{ $footerSocial := .Site.Data.profile.social_media }}
+
+<footer class="footer" style="{{ if $footer.background_image }}background:url({{ $footer.background_image | absURL }}) no-repeat center;background-size:cover;background-blend-mode:overlay;background-color:rgba(0,0,0,0.9){{ else }}background:{{ $footer.footer_background_color }}{{ end }}">
+    <div class="uk-section">
+        <div class="uk-container uk-container-large">
+            <a href="cloudcannon:collections/data/footer.yml" class="editor-link editor-content"><span uk-icon="icon: file-edit"></span> Edit Footer</a>
+            <div class="uk-grid-large uk-child-width-1-4@m uk-child-width-1-2@s{{ if $footer.enable_black_text }} uk-dark{{ else }} uk-light{{ end }}" uk-grid>
+                <div>
+                    {{ if $footer.logo }}
+                    <img src="{{ $footer.logo | absURL }}" alt="{{ $companyName }}" width="150" />
+                    {{ else }}
+                    <h2 class="uk-h5 uk-text-bold editable">Heading</h2>
+                    {{ end }}
+                    <ul class="uk-list">
+                        {{ if $footerContact.name }}<li><p>{{ $footerContact.name }}</p></li>{{ end }}
+                        {{ if $footerContact.license }}<li><p>{{ $footerContact.license }}</p></li>{{ end }}
+                    </ul>
+                    <div class="accent">
+                        {{ partial "templates/social" . }}
+                    </div>
+                </div>
+                <div>
+                    <h2 class="uk-h5 uk-text-bold editable">Contact</h2>
+                    <ul class="uk-list">
+                        {{ partial "templates/contact" . }}
+                    </ul>
+                </div>
+                <div>
+                    <h2 class="uk-h5 uk-text-bold editable">Quick Links</h2>
+                    <ul class="uk-list">
+                        {{ range $footer.additional_links }}
+                        <li><a href="{{ .link | absURL }}">{{ .name }}</a></li>
+                        {{ end }}
+                    </ul>           
+                </div>
+                <div>
+                    <div class="footer-text">
+                        <h2 data-cms-options='{"image": false}' class="uk-h5 uk-text-bold editable">About</h2>
+                        <p data-cms-options='{"image": false}' class="editable">The about</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="uk-container{{ if $footer.enable_black_text }} uk-dark{{ else }} uk-light{{ end }}">
+        <div class="uk-grid">
+            <div class="uk-width-1-1 uk-text-center">                
+                <ul class="uk-list">
+                    {{ range $footer.important_documents }}
+                    <li><a href="{{ .document | absURL }}" target="_blank" class="uk-text-bold">{{ .name }}</a></li>
+                    {{ end }}
+
+                    <li><small data-cms-options='{"image": false}' class="editable">The data and information contained within this website are for informational purposes. We try our best to keep all information up-to-date but encourage visitors to do their own research to determine the accuracy of material available on this website. While we strive to keep the information accurate, we do not warrant the accuracy or completeness of the information, text, graphics, links, or other items contained within these materials. Please visit our full disclaimer for more information.</small></li>
+                    <li><small>&copy; Copyright {{ dateFormat "2006" now }}, {{ .Site.Data.profile.company_name }}  &middot; <a href="https://hungryram.com" target="_blank" class="uk-text-bold" rel="nofollow">Real Estate Website Powered by Hungry Ram Web Design</a></small></li>
+                    {{ if $footer.equal_housing_logo }}
+                    <li class="uk-display-inline-block uk-margin-small-right"><img src="https://res.cloudinary.com/hungryram19/image/upload/v1628532562/Resources/equal-housing-opportunity-transparent_jdomdn.png" alt="equal housing opportunity logo" width="30" /></li>
+                    {{ end }}
+                    {{ if $footer.mls_logo }}
+                    <li class="uk-display-inline-block uk-margin-small-right"><img src="https://res.cloudinary.com/hungryram19/image/upload/v1628532562/Resources/mls-logo_bpy61v.png" alt="mls logo" width="80" /></li>
+                    {{ end }}
+                    {{ if $footer.realtor_logo }}
+                    <li class="uk-display-inline-block uk-margin-small-right"><img src="https://res.cloudinary.com/hungryram19/image/upload/v1628532562/Resources/REALTOR-mark_qhm0id.png" alt="REALTOR® logo" width="40" /></li>
+                    {{ end }}
+                </ul>
+            </div>
+        </div>
+        <div class="uk-grid uk-padding-small">
+            <div class="uk-width-1-1">
+                <ul class="hr-legals uk-padding-remove uk-text-center">
+                    {{ range where $.Site.Pages.ByWeight "Type" "legal" }}
+                    <li class="uk-display-inline uk-margin-medium-right"><small><a href="{{ .Permalink }}">{{ .Title }}</a></small></li>
+                    {{ end }}
+                    <li class="uk-display-inline uk-margin-medium-right">
+                        <small>
+                            <a href="{{ .Site.BaseURL }}sitemap">Sitemap</a>
+                        </small>
+                    </li>
+                  </ul>
+            </div>
+        </div>
+    </div>
+</footer>
+<a id="scroll-top" title="Top" uk-totop href="#totop" uk-scroll></a>
+<script>
+    //Get the button
+    var mybutton = document.getElementById("scroll-top");
+    
+    // When the user scrolls down 20px from the top of the document, show the button
+    window.onscroll = function() {scrollFunction()};
+    
+    function scrollFunction() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        mybutton.style.display = "block";
+        } else {
+        mybutton.style.display = "none";
+        }
+    }
+</script>
+    <!-- CUSTOM SCRIPT -->
+{{ .Site.Data.developer.custom_closing_script }}
