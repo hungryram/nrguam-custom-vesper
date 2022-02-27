@@ -12,7 +12,9 @@
                     {{ if $footer.logo }}
                     <img src="{{ $footer.logo | absURL }}" alt="{{ $companyName }}" width="150" />
                     {{ else }}
-                    <h2 class="uk-h5 uk-text-bold editable">Heading</h2>
+                    <h2 class="uk-h5 uk-text-bold editable">
+                    	National Realty Guam
+                    </h2>
                     {{ end }}
                     <ul class="uk-list">
                         {{ if $footerContact.name }}<li><p>{{ $footerContact.name }}</p></li>{{ end }}
@@ -23,13 +25,17 @@
                     </div>
                 </div>
                 <div>
-                    <h2 class="uk-h5 uk-text-bold editable">Contact</h2>
+                    <h2 class="uk-h5 uk-text-bold editable">
+                    	Contact
+                    </h2>
                     <ul class="uk-list">
                         {{ partial "templates/contact" . }}
                     </ul>
                 </div>
                 <div>
-                    <h2 class="uk-h5 uk-text-bold editable">Quick Links</h2>
+                    <h2 class="uk-h5 uk-text-bold editable">
+                    	Quick Links
+                    </h2>
                     <ul class="uk-list">
                         {{ range $footer.additional_links }}
                         <li><a href="{{ .link | absURL }}">{{ .name }}</a></li>
@@ -38,8 +44,12 @@
                 </div>
                 <div>
                     <div class="footer-text">
-                        <h2 data-cms-options='{"image": false}' class="uk-h5 uk-text-bold editable">About</h2>
-                        <p data-cms-options='{"image": false}' class="editable">The about</p>
+                        <h2 data-cms-options='{"image": false}' class="uk-h5 uk-text-bold editable">
+                        	About
+                        </h2>
+                        <p data-cms-options='{"image": false}' class="editable">
+                        	National Realty is a proud member of the Guam Association of Realtors&reg; (GAR).
+                        </p>
                     </div>
                 </div>
             </div>
