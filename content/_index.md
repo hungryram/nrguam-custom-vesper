@@ -48,5 +48,15 @@ home_sections:
       - heading: Sell
         image: /uploads/white-exterior-home-in-guam.jpg
         link:
+      - heading: Lease
+        image: /uploads/bathtub-in-guam.webp
+        link:
+      - heading: Featured
+        image: /uploads/white-kitchen.webp
+        link:
+  - _type: team-carousel
+    template: home-agent
+    heading: Our Team
+    body: Let our team of professionals help you.
 ---
 
