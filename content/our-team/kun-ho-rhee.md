@@ -1,5 +1,5 @@
 +++
-photo = "/uploads/images/boss-portrait-resized.webp"
+photo = "/uploads/boss-portrait-resized.webp"
 title = "Kun Ho Rhee"
 weight = 1
 
