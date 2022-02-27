@@ -1,6 +1,7 @@
 column_size: 2-3@m
-custom_css: |-
+custom_css: >-
   <style>
+
   div.featured-boxes h3 {
       background: white;
       color: #000;
@@ -10,9 +11,22 @@ custom_css: |-
       width: 70%;
       font-size: 1.2rem;
   }
+
   .uk-overlay-agent {
       background: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0.7));
   }
+
+
+  body h1, body h2, body h3, body h4, body h5, body h6, body .uk-h1, body
+  .uk-h2, body .uk-h3, body .uk-h4, body .uk-h5, body .uk-h6, body
+  .uk-heading-2xlarge, body .uk-heading-large, body .uk-heading-medium, body
+  .uk-heading-small, body .uk-heading-xlarge {
+      font-family: 'Playfair Display', serif!important;
+  }
+
   </style>
-custom_script:
+custom_script: >
+  <link
+  href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap"
+  rel="stylesheet">
 custom_closing_script:
