@@ -1,9 +1,9 @@
 branding:
-  site_title:
-  logo:
-  dark_logo:
-  favicon:
-  logo_width: 120
+  site_title: National Realty Guam
+  logo: /uploads/national-realty-n-logo-alt-small-4-e1609325162378.webp
+  dark_logo: /uploads/national-realty-n-logo-small-optimized-3.webp
+  favicon: /uploads/nrguam-favicon.jpg
+  logo_width: 155
 icons:
   onefivetwo:
   onefourfour:
@@ -21,18 +21,18 @@ header:
     background_color: '#222'
     enable_white_text: true
 pages:
-  image:
+  image: /uploads/dark-white-kitchen-d50bh8.jpg
 page_sidebar:
   sidebar:
     - _type: custom-text
       template: custom-text
       body:
 colors:
-  button_background_color: '#3fb9be'
+  button_background_color: '#204079'
   button_text_color: '#ffffff'
-  links: '#3fb9be'
-  accent: '#3fb9be'
-  idx_title_background_color:
+  links: '#204079'
+  accent: '#204079'
+  idx_title_background_color: '#252525'
   idx_title_text_color: '#ffffff'
 search_field:
   disable_search: false
