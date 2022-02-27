@@ -614,6 +614,6 @@ _structures:
           heading:
           body:
           blocks:
-            heading:
+          - heading:
             image:
             link:
