@@ -32,7 +32,7 @@ page_sidebar:
 colors:
   button_background_color: '#204079'
   button_text_color: '#ffffff'
-  links: '#204079'
+  links: '#3464ba'
   accent: '#204079'
   idx_title_background_color: '#252525'
   idx_title_text_color: '#ffffff'
