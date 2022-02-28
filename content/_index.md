@@ -47,10 +47,10 @@ home_sections:
         link: https://search.idxhome.com/homesearch/162504
       - heading: Sell
         image: /uploads/white-exterior-home-in-guam.jpg
-        link:
+        link: /sell
       - heading: Lease
         image: /uploads/bathtub-in-guam.webp
-        link:
+        link: /lease
       - heading: Featured
         image: /uploads/white-kitchen.webp
         link:
