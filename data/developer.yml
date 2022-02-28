@@ -33,4 +33,9 @@ custom_script: >
   <link
   href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap"
   rel="stylesheet">
-custom_closing_script:
+custom_closing_script: |-
+  <script>
+      $( document ).ready(function() {
+      $("#ihf-main-search-form > fieldset > div:nth-child(1) > div > label").html("Village");
+      })
+      </script>
