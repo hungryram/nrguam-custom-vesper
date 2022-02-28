@@ -1,0 +1,111 @@
+<div class="uk-width-expand">
+    <div class="uk-card uk-card-body">
+        {{ range .Site.Data.appearance.page_sidebar.sidebar }}
+        {{ if eq "side-blog-category" .template }}
+        <div>
+            <h2 class="uk-h4 uk-text-bold">Blog Categories</h2>
+            <ul class="uk-list">
+                {{ range $name, $taxonomy := $.Site.Taxonomies.categories }}
+                <li class="align-center">
+                    <span uk-icon="triangle-right"></span><a href="/categories{{ $name | urlize | relURL }}" class="uk-margin-small-left primary-link">{{ $name | humanize }}</a>
+                </li>
+                {{else}}
+                <p>No blog categories just yet</p>
+                {{ end }}
+            </ul>
+        </div>
+        {{ end }}
+
+        {{ if eq "latest-posts" .template }}
+        <div>
+            <h2 class="uk-h4 uk-text-bold">Latest Posts</h2>
+            {{ range  first 4 ( where $.Site.RegularPages "Type" "blog") }}
+            {{ if ne .Title "" }}
+            <a href="{{ .Permalink }}">
+                <div class="uk-card uk-margin-small-bottom">
+                    <h3 class="uk-h5" style="margin: 0;">{{ .Params.title }}</h3>
+                    <time><small>{{.Date.Format "Jan 2, 2006" }}</small></time>
+                    <a href="{{ .Permalink }}" class="uk-display-block primary-link">Read more</a>
+              </div>
+            </a>
+            <hr>
+            {{ end }}
+            {{ end }}
+        </div>
+        {{ end }}
+
+        {{ if eq "custom-text" .template }}
+        <div class="md-content">
+            {{ .body | markdownify }}
+        </div>
+        {{ end }}
+
+        {{ if eq "custom-code" .template }}
+        <div>
+            {{ .textarea | safeHTML }}
+        </div>
+        {{ end }}
+
+        {{ if eq "sidebar-listings" .template }}
+        <h2 class="uk-h4 uk-text-bold">{{ .heading }}</h2>
+        <div class="uk-card uk-card-default uk-margin-small-top">
+            <div class="uk-position-relative uk-visible-toggle uk-light property-card" tabindex="-1" uk-slideshow="min-height: 300;animation: push">
+    
+                <ul class="uk-slideshow-items">
+                    {{ range shuffle ( where $.Site.RegularPages "Type" "listings") }}
+                    {{ if ne .Title  "" }}
+                    <li>
+                        <a href="{{ .Permalink }}">
+                            <div class="uk-card uk-card-default property-card">
+                                <div class="uk-card-media-top">
+                                    <div class="uk-cover-container">
+                                        <canvas height="300"></canvas>
+                                        {{ if .Params.photos.gallery }}
+                                        <img src="{{ (index .Params.photos.gallery 0).image | absURL }}" alt="{{ .Title }}" uk-cover>
+                                        {{ else }}
+                                        <img src="https://res.cloudinary.com/hungryram19/image/upload/v1645813822/Resources/realestate-assets/no-house-photo.jpg" alt="no house" uk-cover>
+                                        {{ end }}
+                                        <div class="property-card-overlay uk-position-cover"></div>
+                                        <div class="uk-position-absolute property-card-details">
+                                            <div class="uk-text-center uk-light" uk-grid>
+                                                <div class="uk-width-1-2">
+                                                    <div class="uk-card uk-text-left">
+                                                        {{ if .Params.status }}<span class="status uk-badge">{{ .Params.status }}</span>{{ end }}
+                                                        {{ if .Params.featured }}<span class="featured uk-badge">{{ .Params.featured }}</span>{{ end }}
+                                                    </div>
+                                                </div>
+                                                <div class="uk-width-1-2">
+                                                    <div class="uk-card uk-text-right">
+                                                        <span class="price-badge">
+                                                            {{ .Params.price }}
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="uk-position-absolute property-card-address uk-text-left">
+                                            <div class="uk-white">
+                                                <h4 class="uk-white">{{ .Params.short_title }}</h4>
+                                                <span class="grid-address uk-display-block">{{ .Title }}</span>
+                                                <span class="grid-address uk-display-block">{{ .Params.cities }}, {{ .Params.states }} {{ index .Params "zip-codes" }}</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                </div>
+                        </a>
+                    </li>
+                    {{ end }}
+                    {{ end }}
+                </ul>
+            
+                <a class="uk-position-center-left uk-position-small" href="#" uk-slidenav-previous uk-slideshow-item="previous"></a>
+                <a class="uk-position-center-right uk-position-small" href="#" uk-slidenav-next uk-slideshow-item="next"></a>
+            
+            </div>
+        </div>
+        {{ end }}
+        
+        {{ end }}
+    </div>
+</div>

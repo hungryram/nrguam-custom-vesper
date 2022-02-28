@@ -1,0 +1,32 @@
+{{ define "main" }}
+{{ $accent := $.Site.Data.appearance.colors.accent }}
+{{ $size := .Site.Data.developer }}
+
+<div class="uk-section">
+    <div class="uk-container uk-container-large">
+        <div class="uk-grid-small" uk-grid>
+            <div class="uk-width-{{ $size.column_size }}">
+                {{ $teamCount := len (where .Site.RegularPages "Section" "==" "our-team") }}
+                {{ if gt $teamCount 0 }}
+                {{ $paginator := .Paginate (where .Pages "Type" "our-team") 6 }}
+                {{ range $paginator.Pages.ByWeight }}
+                {{ if ne .Title "" }}
+                {{ partial "templates/list-view" . }}
+                {{ end }}
+                {{ end }}
+                {{ else }}
+                <div class="uk-width-3-4@s">
+                    <div class="inner-container">
+                        <h4>No team added yet</h4>
+                        <p>Check back later for updated information</p>
+                    </div>
+                </div>
+                {{ end }}
+                {{ partial "templates/pagination" . }}
+
+            </div>
+            {{ partial "templates/page-sidebar" . }}
+        </div>
+    </div>
+</div>
+{{ end }}
