@@ -2,6 +2,10 @@ column_size: 2-3@m
 custom_css: >-
   <style>
 
+  #ihf-sidebar-container [data-ihf-client-id="162504"] {
+   margin-top: 20px;
+  }
+
   div.hero-overlay {
       background: rgb(0 0 0 / 50%);
   }
