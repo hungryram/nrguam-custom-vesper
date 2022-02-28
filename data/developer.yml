@@ -40,6 +40,6 @@ custom_script: >
 custom_closing_script: |-
   <script>
       $( document ).ready(function() {
-      $("#ihf-main-search-form > fieldset > div:nth-child(1) > div > label").html("Village");
+      $("#ihf-main-search-form > fieldset > div:nth-child(1) > div > label, #address > fieldset > div:nth-child(3) > div.col-xs-8 > label").html("Village");
       })
       </script>
