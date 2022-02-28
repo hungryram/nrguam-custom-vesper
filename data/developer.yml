@@ -3,7 +3,7 @@ custom_css: >-
   <style>
 
   #ihf-sidebar-container [data-ihf-client-id="162504"] {
-   margin-top: 20px;
+   margin-top: 50px;
   }
 
   div.hero-overlay {
