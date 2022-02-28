@@ -2,6 +2,10 @@ column_size: 2-3@m
 custom_css: >-
   <style>
 
+  div.hero-overlay {
+      background: rgb(0 0 0 / 50%);
+  }
+
   div.featured-boxes h3 {
       background: white;
       color: #000;
