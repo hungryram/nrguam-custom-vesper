@@ -2,6 +2,10 @@ column_size: 2-3@m
 custom_css: >-
   <style>
 
+  #ihf-sidebar-container [data-ihf-client-id="162504"] {
+   margin-top: 50px;
+  }
+
   div.hero-overlay {
       background: rgb(0 0 0 / 50%);
   }
@@ -36,6 +40,6 @@ custom_script: >
 custom_closing_script: |-
   <script>
       $( document ).ready(function() {
-      $("#ihf-main-search-form > fieldset > div:nth-child(1) > div > label").html("Village");
+      $("#ihf-main-search-form > fieldset > div:nth-child(1) > div > label, #address > fieldset > div:nth-child(3) > div.col-xs-8 > label").html("Village");
       })
       </script>
