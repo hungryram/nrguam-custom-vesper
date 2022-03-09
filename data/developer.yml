@@ -43,5 +43,5 @@ custom_closing_script: |-
       $("#ihf-main-search-form > fieldset > div:nth-child(1) > div > label, #address > fieldset > div:nth-child(3) > div.col-xs-8 > label").html("Village");
       });
 
-  $("#ihf-main-container > div > h1").html("Find your next property");
+  $("#ihf-main-container > div > h1").html("Find Your Next Property");
       </script>
