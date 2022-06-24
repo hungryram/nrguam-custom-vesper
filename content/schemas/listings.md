@@ -12,6 +12,7 @@ listing_agent = ""
 draft = false
 [[business_slides]]
 photo = ""
+heading = ""
 body = ""
 [photos]
 main_photo = ""

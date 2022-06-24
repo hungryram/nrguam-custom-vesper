@@ -10,7 +10,10 @@ properties = ""
 featured = "Featured"
 listing_agent = ""
 draft = false
-
+[[business_slides]]
+photo = ""
+heading = ""
+body = ""
 [photos]
 main_photo = "/uploads/20220623-233844.jpg"
 
