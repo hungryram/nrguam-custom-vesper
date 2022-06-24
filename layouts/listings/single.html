@@ -153,6 +153,39 @@
                     </div>
                 </div>
 
+                {{ if .Params.business_slides }}
+                <div class="uk-card uk-card-default uk-card-body uk-margin-small-top">
+                    <div class="uk-slider-container-offset" uk-slider>
+            
+                        <div class="uk-position-relative uk-visible-toggle" tabindex="-1">
+                    
+                            <ul class="uk-slider-items uk-child-width-1-2@s uk-grid uk-grid-large">
+                                {{ range .Params.business_slides }}
+                                <li>
+                                    <div class="uk-card">
+                                        <div class="uk-card-media-top">
+                                            <img src="{{ .photo }}" width="1800" height="1200" alt="">
+                                        </div>
+                                        <div class="uk-card-body">
+                                            <h3 class="uk-card-title">{{ .heading }}</h3>
+                                            {{ .body | markdownify }}
+                                        </div>
+                                    </div>
+                                </li>
+                                {{ end }}
+                            </ul>
+                    
+                            <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slider-item="previous"></a>
+                            <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slider-item="next"></a>
+                    
+                        </div>
+                    
+                        <ul class="uk-slider-nav uk-dotnav uk-flex-center uk-margin"></ul>
+                    
+                    </div>
+                </div>
+                {{ end }}
+
                 <!-- INTERIOR DETAIL -->
                 {{ if .Params.utilities_and_features.interior_details.show_interior_details }}
                 <div class="uk-card uk-card-default uk-margin-small-top uk-card-body">
