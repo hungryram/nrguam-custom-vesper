@@ -1,9 +1,9 @@
 +++
-title = "Browse Our Properties"
-body = "View featured properties from our office."
+title = "Featured Properties"
+body = "Find your new home or investment."
 
 [search_engine_optimization]
-title_tag = ""
+title_tag = "Featured Properties | NR Guam"
 meta_description = ""
 +++
 

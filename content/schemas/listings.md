@@ -10,6 +10,8 @@ properties = ""
 featured = ""
 listing_agent = ""
 draft = false
+[business_slides]
+business_slides = [""]
 [photos]
 main_photo = ""
 gallery = []

@@ -1,0 +1,127 @@
+{{ $accent := $.Site.Data.appearance.colors.accent }}
+
+<div class="uk-width-expand@s">
+    <div class="uk-card uk-card-default uk-card-body">
+        {{ if .Params.listing_agent }}
+        {{ with .Site.GetPage .Params.listing_agent }}
+        <div class="uk-text-center">
+            {{ if .Params.photo }}
+            <img src="{{ .Params.photo | absURL }}" alt="{{ .Title }}"
+                style="width:100px;height:100px;border-radius:50%;object-fit:cover">
+            {{ else }}
+            <img src="https://res.cloudinary.com/hungryram19/image/upload/v1645813823/Resources/realestate-assets/user.jpg" alt="use icon" width="100" style="border-radius:50%;">
+            {{ end }}
+            <h2 class="uk-margin-medium-top uk-margin-small-bottom uk-h4 uk-text-bold">{{ .Title }}</h2>
+            {{ if .Params.details.position }}<span>{{ .Params.details.position }}</span>{{ end }} {{ if
+            .Params.details.license_number }}<span class="uk-text-bold">| {{ .Params.details.license_number }}</span>{{
+            end }}
+            <a href="mailto:{{ .Params.contact.email }}" class="uk-display-block">{{ .Params.contact.email }}</a>
+            <a href="tel:{{ .Params.contact.cell  }}" class="uk-display-block">{{ .Params.contact.cell }}</a>
+            <hr>
+            <a href="{{ .Permalink }}" class="uk-icon-button uk-margin-small-right primary-accent" uk-icon="user" title="View profile" ></a>
+            <div class="uk-margin-small-bottom uk-margin-small-top social_icons">
+                {{ if .Params.social_media.facebook }}<a href="{{ .Params.social_media.facebook }}" class="uk-icon-button uk-margin-small-right" uk-icon="icon: facebook; ratio: .8" target="_blank"></a>{{ end }}
+                {{ if .Params.social_media.instagram }}<a href="{{ .Params.social_media.instagram }}" class="uk-icon-button uk-margin-small-right" uk-icon="icon: instagram; ratio: .8" target="_blank"></a>{{ end }}
+                {{ if .Params.social_media.linkedin }}<a href="{{ .Params.social_media.linkedin }}" class="uk-icon-button uk-margin-small-right" uk-icon="icon: linkedin; ratio: .8" target="_blank"></a>{{ end }}
+                {{ if .Params.social_media.pinterest }}<a href="{{ .Params.social_media.pinterest }}" class="uk-icon-button uk-margin-small-right" uk-icon="icon: pinterest; ratio: .8" target="_blank"></a>{{ end }}
+                {{ if .Params.social_media.twitter }}<a href="{{ .Params.social_media.twitter }}" class="uk-icon-button uk-margin-small-right" uk-icon="icon: twitter; ratio: .8" target="_blank"></a>{{ end }}
+                {{ if .Params.social_media.youtube }}<a href="{{ .Params.social_media.youtube }}" class="uk-icon-button uk-margin-small-right" uk-icon="icon: youtube; ratio: .8" target="_blank"></a>{{ end }}
+                {{ if .Params.social_media.tiktok }}<a href="{{ .Params.social_media.tiktok }}" class="uk-icon-button uk-margin-small-right" uk-icon="icon: tiktok; ratio: .8" target="_blank"></a>{{ end }}
+                {{ if .Params.social_media.yelp }}<a href="{{ .Params.social_media.yelp }}" class="uk-icon-button uk-margin-small-right" uk-icon="icon: yelp; ratio: .8" target="_blank"></a>{{ end }}
+            </div>
+        </div>
+        {{ end }}
+        {{ else }}
+        <div class="property-form">
+            <div class="uk-margin-small-bottom">
+                <h3>Request more information</h3>
+            </div>
+            {{ partial "templates/property-form" . }}
+        </div>
+        {{ end }}
+    </div>
+    {{ if .Params.business_slides }}
+    <div class="uk-card uk-card-default uk-card-body uk-margin-small-top">
+        <div class="uk-slider-container-offset" uk-slider>
+
+            <div class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1">
+        
+                <ul class="uk-slider-items uk-child-width-1-2@s uk-grid">
+                    {{ range .Params.business_slides }}
+                    <li>
+                        <div class="uk-card uk-card-default">
+                            <div class="uk-card-media-top">
+                                <img src="images/photo.jpg" width="1800" height="1200" alt="">
+                            </div>
+                            <div class="uk-card-body">
+                                <h3 class="uk-card-title">Headline</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+                            </div>
+                        </div>
+                    </li>
+                    {{ end }}
+                </ul>
+        
+                <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slider-item="previous"></a>
+                <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slider-item="next"></a>
+        
+            </div>
+        
+            <ul class="uk-slider-nav uk-dotnav uk-flex-center uk-margin"></ul>
+        
+        </div>
+    </div>
+    {{ end }}
+    <div class="uk-card uk-card-default uk-card-body uk-margin-small-top">
+        <h2 class="uk-h5 hr-text-medium-bold">Find similar properties</h2>
+        <ul class="uk-list">
+            <li>
+                <a href="/cities/{{ .Params.cities | urlize }}" class="primary-accent">View more listings in the same city <span uk-icon="icon: triangle-right"></span></a>
+            </li>
+            <li>
+                <a href="/zip-codes/{{ index .Params "zip-codes" }}" class="primary-accent">View more listings with the same zip code <span uk-icon="icon: triangle-right"></span></a>
+            </li>
+        </ul>
+    </div>
+    {{ if .Params.tools.open_house_date }}
+    <div class="uk-card uk-card-default uk-card-body uk-margin-small-top">
+        <h2 class="uk-h5 hr-text-medium-bold">Open House</h2>
+        <p>{{ .Params.tools.open_house_date }}</p>
+        <p>{{ .Params.tools.open_house_details }}</p>
+    </div>
+    {{ end }}
+    {{ if .Params.tools.open_house_date }}
+    <div class="uk-card uk-card-default uk-card-body uk-margin-small-top">
+        <h2 class="uk-h5 hr-text-medium-bold">File attachments</h2>
+        {{ range .Params.tools.file_attachments }}
+        <p><a href="{{ .document | absURL }}" target="_blank" class="primary-accent"><span uk-icon="icon: download"></span> {{ .name }}</a></p>
+        {{else}}
+        <p>no files</p>
+        {{end}}
+    </div>
+    {{ end }}
+
+    <div class="uk-card uk-card-default uk-card-body uk-margin-small-top">
+        {{ partial "templates/share" . }}
+    </div>
+
+    <div class="uk-card uk-margin-small-top">
+        <h2 class="uk-h5 hr-text-medium-bold">More Listings</h2>
+
+        <div class="uk-position-relative uk-visible-toggle uk-light property-card" tabindex="-1"
+            uk-slideshow="min-height: 300;animation: push">
+
+            <ul class="uk-slideshow-items">
+                {{ range shuffle ( where $.Site.RegularPages "Type" "listings") }}
+                {{ if ne .Title "" }}
+                <a href="{{ .Permalink }}">
+                    {{ partial "templates/property-card" . }}
+                </a>
+                {{ end }}
+                {{ end }}
+            </ul>
+            <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slideshow-item="previous"></a>
+            <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slideshow-item="next"></a>
+        </div>
+    </div>
+</div>
