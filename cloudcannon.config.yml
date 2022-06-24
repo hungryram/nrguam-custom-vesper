@@ -488,6 +488,7 @@ _inputs:
         - WV
         - WI
         - WY
+        - GU
 _structures:
   menu:
     values:

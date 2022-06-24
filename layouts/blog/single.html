@@ -1,0 +1,47 @@
+{{ define "main" }}
+{{ $size := .Site.Data.developer }}
+
+<div class="uk-section">
+    <div class="uk-container uk-container-large">
+        <div class="uk-grid-small" uk-grid>
+            <div class="uk-width-{{ $size.column_size }}">
+                {{ if .Params.featured_image }}
+                <div class="uk-margin-medium">
+                    <img src="{{ .Params.featured_image | absURL }}" alt="{{ .Params.image_alt_tag }}">
+                </div>
+                {{ end }}
+                <div class="md-content">
+                    {{ .Content }}
+                </div>
+                <hr>
+                {{ if .Params.categories }}
+                <ul class="uk-list md-content">
+                    <h2 class="uk-h5 hr-text-medium-bold">Categories</h2>
+                    {{ range $name, $taxonomy := $.Site.Taxonomies.categories }}
+                    <li>
+                        <a href="/categories{{ $name | urlize | relURL }}" class="uk-text-link">{{ $name | humanize }}</a>
+                    </li>
+                    {{ end }}
+                </ul>
+                {{ end }}
+                {{ if .Params.tags }}
+                <ul class="uk-list md-content">
+                    <h2 class="uk-h5 hr-text-medium-bold">Tags</h2>
+                    {{ range $name, $taxonomy := $.Site.Taxonomies.tags }}
+                    <li>
+                        <a href="/tags{{ $name | urlize | relURL }}" class="uk-text-link">{{ $name | humanize }}</a>
+                    </li>
+                    {{ end }}
+                </ul>
+                {{ end }}
+
+                <div class="uk-margin-medium-top">
+                    {{ partial "templates/share" . }}
+                </div>
+            </div>
+            
+            {{ partial "templates/page-sidebar" . }}
+        </div>
+    </div>
+</div>
+{{ end }}

@@ -1,7 +1,7 @@
 +++
 title = "310 Route 8"
 cities = "Barrigada"
-states = ""
+states = "GU"
 zip-codes = "96913"
 status = "Active"
 short_title = "Crown Plaza"

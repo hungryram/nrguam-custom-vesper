@@ -1,0 +1,14 @@
+  
+{{ partial "global/head" . }}
+
+<div class="uk-height-idx uk-panel uk-flex uk-flex-center uk-flex-middle page-banner" style="background: url({{ .Site.Data.appearance.pages.image | absURL }})no-repeat center;background-size:cover">
+    <div class="hero-overlay uk-position-cover"></div>
+    <div class="uk-position-top full-nav-wrapper">
+        {{ partial "global/navbar" . }}
+    </div>
+</div><div class="uk-section">
+    <div class="uk-container uk-container-large">
+        {idx_body}
+    </div>
+</div>
+{{ partial "global/footer" . }}
