@@ -45,8 +45,8 @@ community_features_choice = []
 additional_community_details = [""]
 [tools]
 file_attachments = []
-open_house_date = "Nov 3, 2021"
-open_house_details = "The door will be open!"
+open_house_date = ""
+open_house_details = ""
 youtube_link = ""
 [search_engine_optimization]
 title_tag = ""

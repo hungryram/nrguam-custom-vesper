@@ -7,35 +7,33 @@
 
 <div class="uk-section">
     <div class="uk-container uk-container-large">
-        <div class="uk-flex-bottom uk-grid-small{{ if lt .Params.photos.gallery 4 }}{{ else }} uk-hidden@m{{ end }}"
-            style="position: relative;bottom: 40px" uk-grid>
-            <div class="uk-width-1-2@s uk-margin-medium-top" uk-grid>
+        <div class="uk-flex-center uk-flex uk-grid-small{{ if lt .Params.photos.gallery 4 }}{{ else }} uk-hidden@m{{ end }}"
+            style="position: relative;bottom: 40px">
+            <div class="uk-width-1-1 uk-margin-medium-top uk-text-center">
                 <div class="uk-card">
-                    <ul class="uk-flex uk-list uk-flex-left uk-flex-bottom">
+                    <ul class="uk-flex uk-list uk-flex-center uk-flex-bottom">
                         <li>
                             {{ if in .Params.status "Sold" }}
                             <span class="uk-badge status" style="background: #d10000">{{ .Params.status }}</span>
                             {{ else }}
-                            <span class="uk-badge status" >{{ .Params.status }}</span>
+                            <span class="uk-badge status" {{ if in .Params.status "Sold" }}style="background: #d10000"{{ else }}style="background:{{ $buttonColor.button_background_color }};color:{{ $buttonColor.button_text_color }}"{{ end }}>{{ .Params.status }}</span>
                             {{ end }}
 
 
                             {{ if .Params.featured }}<span class="featured uk-badge">{{ .Params.featured }}</span>{{ end }}
-                            <h2 class="uk-margin-small-top uk-h2 uk-text-bold">{{ .Params.short_title }}</h2>
-                            <h3 class="uk-margin-remove uk-h5">{{ .Title }}, {{ .Params.cities }}, {{ .Params.states }} {{ index .Params "zip-codes" }}</h3>
+                            <h2 class="uk-margin-small-top uk-h1 uk-text-bold">{{ .Params.short_title }}</h2>
+                            <h3 class="uk-margin-remove uk-h3">{{ .Title }}, {{ .Params.cities }}, {{ .Params.states }} {{ index .Params "zip-codes" }}</h3>
                         </li>
                     </ul>
-                </div>
-            </div>
-            <div class="uk-width-1-2@s">
-                <div class="uk-card">
-                    <div class="uk-display-block">
-                        <ul class="uk-flex uk-list uk-flex-bottom">
-                            <li>
-                                <p class="uk-margin-remove">Price</p>
-                                <h3 class="uk-margin-remove">{{ .Params.price }}</h3>
-                            </li>
-                        </ul>
+                    <div class="uk-card">
+                        <div class="uk-display-block">
+                            <ul class="uk-flex uk-list uk-flex-center">
+                                <li>
+                                    <p class="uk-margin-remove">Price</p>
+                                    <h3 class="uk-margin-remove">{{ .Params.price }}</h3>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
